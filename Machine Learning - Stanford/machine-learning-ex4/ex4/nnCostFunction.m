@@ -69,8 +69,8 @@ X = [ones(m, 1) X];
 % parameters, I changed the output matrix, each row of y_mat is now equivalent
 % of the output matrix we want to show for each row in input X
 % This is an alternate solution I wrote.
-% The solution according to the excercise is commented out below.
 
+% === Alternate solution without regularization =============
 
 y_mat = zeros(m, K);
 for j = 1:m
@@ -88,10 +88,12 @@ z3 = a2 * Theta2';
 a3 = sigmoid(z3);
 
 inner_sum = (-y_mat .* log(a3) - (1 - y_mat) .* log(1 - a3));
-J = sum(sum(inner_sum, 2)) / m;
+J = sum(sum(inner_sum, 2));
 
+% === Alternate solution ends ================
 
-% Uncomment the following lines for the solution according to the excercise
+% === Solution according to the excercise guide ===
+
 % for i = 1:m
 %     X_i = X(i,:);
 
@@ -111,7 +113,21 @@ J = sum(sum(inner_sum, 2)) / m;
 %     J = J + sum(inner_sum);
 % end;
 
-% J = 1/m * J;
+% === Solution according to the excercise guide ends =====
+
+J = 1/m * J;
+
+% === Regularization part based on the excercise 3, can be simplified
+% Kept it this way because this is easy to understand
+
+temp_theta1 = Theta1(:, 2:input_layer_size + 1);
+temp_theta2 = Theta2(:, 2:hidden_layer_size + 1);
+
+reg_terms = lambda/(2*m) * (sum(sum(temp_theta1.^2)) + sum(sum(temp_theta2.^2)));
+
+J = J + reg_terms;
+
+
 
 
 
