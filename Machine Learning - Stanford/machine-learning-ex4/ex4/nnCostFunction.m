@@ -122,8 +122,8 @@ J = 1/m * J;
 % === Regularization part based on the excercise 3, can be simplified
 % Kept it this way because this is easy to understand
 
-temp_theta1 = Theta1(:, 2:input_layer_size + 1);
-temp_theta2 = Theta2(:, 2:hidden_layer_size + 1);
+temp_theta1 = Theta1(:, 2:end);
+temp_theta2 = Theta2(:, 2:end);
 
 reg_terms = lambda/(2*m) * (sum(sum(temp_theta1.^2)) + sum(sum(temp_theta2.^2)));
 
@@ -159,6 +159,11 @@ end;
 
 Theta1_grad = Delta1 / m;
 Theta2_grad = Delta2 / m;
+
+% Part 3 - Regularized Gradients
+
+Theta1_grad(:, 2:end) = Theta1_grad(:, 2:end) + lambda / m * Theta1(:, 2:end);
+Theta2_grad(:, 2:end) = Theta2_grad(:, 2:end) + lambda / m * Theta2(:, 2:end);
 
 
 
