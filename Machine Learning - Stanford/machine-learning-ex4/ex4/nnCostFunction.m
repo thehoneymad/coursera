@@ -65,6 +65,8 @@ Theta2_grad = zeros(size(Theta2));
 K = num_labels;
 X = [ones(m, 1) X];
 
+% Part 1 implementation
+
 % README before progressing to read. Instead of looping over all the input
 % parameters, I changed the output matrix, each row of y_mat is now equivalent
 % of the output matrix we want to show for each row in input X
@@ -127,6 +129,8 @@ reg_terms = lambda/(2*m) * (sum(sum(temp_theta1.^2)) + sum(sum(temp_theta2.^2)))
 
 J = J + reg_terms;
 
+
+% Part 2 - Backpropagation
 
 
 
