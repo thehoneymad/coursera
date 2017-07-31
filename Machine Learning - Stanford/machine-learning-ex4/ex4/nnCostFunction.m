@@ -131,6 +131,37 @@ J = J + reg_terms;
 
 
 % Part 2 - Backpropagation
+% The first part is copied from Part 1 solution follwing the excercise
+% I intend to reuse my alternative solution here too
+
+Delta1 = zeros(size(Theta1));
+Delta2 = zeros(size(Theta2));
+
+for t = 1:m
+    X_i = X(t,:);
+    a_1 = X_i;
+
+	z_2 = a_1 * Theta1';
+	a_2 = [1 sigmoid(z_2)];
+
+	z_3 = a_2 * Theta2';
+	a_3 = sigmoid(z_3);
+
+	y_i = zeros(1,K);
+	y_i(y(t)) = 1;
+
+	delta3 = a_3 - y_i;
+	delta2 = delta3 * Theta2 .* sigmoidGradient([1 z_2]);
+
+	Delta1 = Delta1 + delta2(2:end)' * a_1;
+	Delta2 = Delta2 + delta3' * a_2;
+end;
+
+Theta1_grad = Delta1 / m;
+Theta2_grad = Delta2 / m;
+
+
+
 
 
 
