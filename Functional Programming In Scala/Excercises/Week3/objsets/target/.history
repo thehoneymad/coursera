@@ -1,9 +1,0 @@
-;reload; set org.jetbrains.sbt.StructureKeys.sbtStructureOptions in Global := "download resolveClassifiers" ;*/*:dumpStructureTo C:/Users/thehoneymad/AppData/Local/Temp/sbt-structure.xml
-all {file:/C:/coursera/Functional%20Programming%20In%20Scala/Excercises/Week3/objsets/}root/products {file:/C:/coursera/Functional%20Programming%20In%20Scala/Excercises/Week3/objsets/}root/test:products
-submit swagataprateek@gmail.com K8OLwKE5N3zqwZ6M
-all {file:/C:/coursera/Functional%20Programming%20In%20Scala/Excercises/Week3/objsets/}root/products {file:/C:/coursera/Functional%20Programming%20In%20Scala/Excercises/Week3/objsets/}root/test:products
-run
-all {file:/C:/coursera/Functional%20Programming%20In%20Scala/Excercises/Week3/objsets/}root/products {file:/C:/coursera/Functional%20Program
-submit swagataprateek@gmail.com K8OLwKE5N3zqwZ6M
-submit swagataprateek@gmail.com yBiM529og9jy5Jzk
-exit
