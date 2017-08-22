@@ -26,6 +26,10 @@ centroids = zeros(K, n);
 % Note: You can use a for-loop over the centroids to compute this.
 %
 
+% The excercise says there is a vectorized solution for this.
+% I can derive the vector operations but Im not good at octave
+% Loop is all I got.
+
 for i = 1 : K % looping over K centroids
     total = 0;
     for j = 1 : m
