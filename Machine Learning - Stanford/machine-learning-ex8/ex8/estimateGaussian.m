@@ -21,6 +21,10 @@ sigma2 = zeros(n, 1);
 %               should contain variance of the i-th feature.
 %
 
+% This is definitely much easier if I use the sum function.
+% I preferred this because it makes me understand step by step
+% what I am doing here.
+
 muT = mean(X, 1);
 mu = muT';
 
